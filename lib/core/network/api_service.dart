@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
@@ -20,7 +18,6 @@ class AppApi {
       final Response response = await DioClient.myDio.get(
         uri,
         queryParameters: queryParameters,
-        // options: Options(headers: {"Authorization": token}),
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
       );
@@ -43,7 +40,6 @@ class AppApi {
       final Response response = await DioClient.myDio.get(
         uri,
         queryParameters: queryParameters,
-        // options: Options(headers: {"Authorization": token}),
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
       );
@@ -73,14 +69,9 @@ class AppApi {
         onSendProgress: onSendProgress,
         onReceiveProgress: onReceiveProgress,
       );
-      debugPrint('0ri09t8409583-4059-3405930-495-03495-034');
-      debugPrint(response.data.toString());
-      debugPrint('0ri09t8409583-4059-3405930-495-03495-034');
 
       return response.data;
     } catch (e) {
-      debugPrint('0ri09t8409583-4059werfdggvdfe-3405930-495-03495-034');
-
       rethrow;
     }
   }
@@ -162,32 +153,4 @@ class AppApi {
     }
   }
 
-  // Download
-  Future<dynamic> download(
-    String uri,
-    String savePath, {
-    token,
-    data,
-    Map<String, dynamic>? queryParameters,
-    Options? options,
-    CancelToken? cancelToken,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    try {
-      final Response response = await Dio(BaseOptions(
-              baseUrl: 'http://blinqbackend.samuraidev.uz/',
-              connectTimeout: 20000,
-              receiveTimeout: 20000,
-              responseType: ResponseType.json))
-          .download(uri, savePath,
-              data: data,
-              queryParameters: queryParameters,
-              cancelToken: cancelToken,
-              onReceiveProgress: onReceiveProgress);
-      return response.data;
-    } catch (e) {
-      rethrow;
-    }
-  }
 }
