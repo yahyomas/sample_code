@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:dio/dio.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:injectable/injectable.dart';
 
 import 'dio_client.dart';
@@ -188,7 +187,7 @@ class AppApi {
               onReceiveProgress: onReceiveProgress);
       return response.data;
     } catch (e) {
-      throw 'common.file_downloading_error'.tr();
+      rethrow;
     }
   }
 }
