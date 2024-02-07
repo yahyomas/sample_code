@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:test_task/core/network/network_constants.dart';
 
 // Project imports:
 import 'interceptor.dart';
@@ -8,7 +9,7 @@ class DioClient {
   static Dio? _myDio;
 
   static final myDioOptions = BaseOptions(
-      baseUrl: 'https://www.massagebook.com/nxt/pu-api/v1/',
+      baseUrl: NetworkConstants.baseUrl,
       connectTimeout: 20000,
       receiveTimeout: 20000,
       responseType: ResponseType.json);

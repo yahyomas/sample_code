@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "total": 49,
+    "limit": 1,
+    "offset": 0
+  },
+  "jsonapi": {
+    "version": "1.1"
+  },
+  "included": [
+    {
+      "id": "5783",
+      "type": "pu-photos",
+      "attributes": {
+        "photo_url": "https:\/\/images.massagebook.com\/img527838297fe036.85205093",
+        "thumbnail_photo_url": "https:\/\/images.massagebook.com\/img52783829f0d070.33282226"
+      }
+    },
+    {
+      "id": "7",
+      "type": "service-categories",
+      "attributes": {
+        "name": "Deep Tissue",
+        "category_type": "Bodywork",
+        "description": "Designed to remove severe tension, deep tissue massage is a technique used to relieve both muscles and connective tissue below the surface. It helps to improve range of motion and heal injuries below the surface.",
+        "is_approved": true,
+        "slug": "deep-tissue"
+      },
+      "links": {
+        "self": {
+          "href": "\/nxt\/pu-api\/v1\/service-categories\/7"
+        }
+      }
+    },
+    {
+      "id": "12",
+      "type": "service-categories",
+      "attributes": {
+        "name": "Myofascial Release",
+        "category_type": "Bodywork",
+        "description": "Myofascial Release uses specific techniques to stretch and repair the connective issue between your muscles (fascia). It helps your body heal properly from injuries and can restore range of motion.",
+        "is_approved": true,
+        "slug": "myofascial-release"
+      },
+      "links": {
+        "self": {
+          "href": "\/nxt\/pu-api\/v1\/service-categories\/12"
+        }
+      }
+    },
+    {
+      "id": "19",
+      "type": "service-categories",
+      "attributes": {
+        "name": "Swedish",
+        "category_type": "Bodywork",
+        "description": "Massage oil or cream is used with smooth, gliding strokes. Swedish massage uses firm but gentle pressure to promote relaxation, ease muscle tension and create other health benefits. It is a classic massage that will ease your stress and allow you to slip into a calm state of relaxation.",
+        "is_approved": true,
+        "slug": "swedish"
+      },
+      "links": {
+        "self": {
+          "href": "\/nxt\/pu-api\/v1\/service-categories\/19"
+        }
+      }
+    },
+    {
+      "id": "25",
+      "type": "service-categories",
+      "attributes": {
+        "name": "Pregnancy",
+        "category_type": "Bodywork",
+        "description": "Pregnancy massage focuses on addressing the special needs of expecting women. Specially-designed massage tables, cushions, and side-lying postures are used to prevent putting pressure on the abdomen.",
+        "is_approved": true,
+        "slug": "pregnancy"
+      },
+      "links": {
+        "self": {
+          "href": "\/nxt\/pu-api\/v1\/service-categories\/25"
+        }
+      }
+    },
+    {
+      "id": "112787",
+      "type": "service-categories",
+      "attributes": {
+        "name": " Massage Therapy ",
+        "category_type": "Bodywork",
+        "description": null,
+        "is_approved": false,
+        "slug": "massage-therapy"
+      },
+      "links": {
+        "self": {
+          "href": "\/nxt\/pu-api\/v1\/service-categories\/112787"
+        }
+      }
+    },
+    {
+      "id": "197749",
+      "type": "service-categories",
+      "attributes": {
+        "name": "Reflexology ",
+        "category_type": "Reflexology",
+        "description": null,
+        "is_approved": false,
+        "slug": "reflexology"
+      },
+      "links": {
+        "self": {
+          "href": "\/nxt\/pu-api\/v1\/service-categories\/197749"
+        }
+      }
+    },
+    {
+      "id": "197753",
+      "type": "service-categories",
+      "attributes": {
+        "name": "Scalp Massage ",
+        "category_type": "Bodywork",
+        "description": null,
+        "is_approved": false,
+        "slug": "scalp-massage"
+      },
+      "links": {
+        "self": {
+          "href": "\/nxt\/pu-api\/v1\/service-categories\/197753"
+        }
+      }
+    }
+  ],
+  "data": [
+    {
+      "id": "83082",
+      "type": "pu-businesses",
+      "attributes": {
+        "business_name": "Massage By Jen ",
+        "description": "\u003Cspan style=\u0022color: rgb(0, 0, 0); font-family: proxima-nova, sans-serif; font-size: 20px; background-color: rgb(248, 247,   240);\u0022\u003EYou\u2019re invited to restore your balance and body through our massages at Massage by Jen.\u003C\/span\u003E\u003Cspan style=\u0022color: rgb(0, 0, 0); font-family: proxima-nova, sans-serif; font-size: 20px; background-color: rgb(248, 247, 240);\u0022\u003E\u00a0Our professional therapist Jen is here to offer a full range of bodywork styles, and detoxifying services for you that is designed to help alleviate the discomfort of headaches, backaches and a stiff neck and shoulders.\u003C\/span\u003E",
+        "tagline": " Every decision you make moves you either towards wellness or towards disease.",
+        "friendly_url": "Massagebyjen411",
+        "website_url": "http:\/\/relaxingmassagebyjen.com",
+        "twitter": "",
+        "facebook": "massagebyjeningoosecreek",
+        "instagram": "massagebyjenandmobileservice",
+        "establishment_license": "6335",
+        "show_address": true,
+        "country": "US",
+        "address_1": "597 Old Mt Holly Rd.",
+        "address_2": "Suite 203 (2nd Floor) ",
+        "city": "Goose Creek",
+        "state": "SC",
+        "zip": "29445",
+        "timezone": "America\/New_York",
+        "distance": 18.7923,
+        "yelp_id": null,
+        "google_place_id": null,
+        "pixel_id": null,
+        "should_display_google_reviews": false,
+        "should_show_contact_form": true,
+        "is_reviews_feature_enabled": false,
+        "offers_mobile_services": true,
+        "offers_gift_certificates": true,
+        "offers_deals": false,
+        "is_featured": false,
+        "coordinates": {
+          "latitude": 33.0331456,
+          "longitude": -80.0600386
+        },
+        "working_hours": {
+          "monday": {
+            "by_appointment_only": true,
+            "open": "8:00",
+            "close": "18:00"
+          },
+          "tuesday": {
+            "by_appointment_only": true,
+            "open": "8:00",
+            "close": "20:00"
+          },
+          "wednesday": {
+            "by_appointment_only": true,
+            "open": "8:00",
+            "close": "13:00"
+          },
+          "thursday": {
+            "by_appointment_only": true,
+            "open": "8:00",
+            "close": "18:00"
+          },
+          "friday": {
+            "by_appointment_only": true,
+            "open": "8:00",
+            "close": "18:00"
+          },
+          "saturday": {
+            "by_appointment_only": false,
+            "open": "8:00",
+            "close": "15:00"
+          },
+          "sunday": {
+            "by_appointment_only": false,
+            "open": null,
+            "close": null
+          }
+        },
+        "website_settings": {
+          "theme_name": "colortheme--default",
+          "background_photo": "https:\/\/images.massagebook.com\/mbhome\/default-05-1200-min.jpg",
+          "background_transparency": 0.85,
+          "theme_hex": "#5181D1",
+          "transition_style": "wave"
+        },
+        "booking_rules": {
+          "is_online_booking_allowed_for_existing_clients": true,
+          "is_online_booking_allowed_for_new_clients": true,
+          "is_online_booking_allowed_for_new_clients_from_mb": true,
+          "is_booking_request_enabled": false,
+          "how_far_in_advance_must_appointments_be_booked": 2,
+          "appointments_interval": 15,
+          "how_far_in_future_appointments_can_be_booked": null
+        },
+        "payment_rules": {
+          "accepts_gift_certificates": true,
+          "accepts_mb_gift_certificates": false,
+          "is_tip_allowed": true,
+          "new_clients": {
+            "require_prepayment": false,
+            "is_partial_prepayment_enabled": false,
+            "is_full_prepayment_allowed": true,
+            "partial_prepayment_amount": null,
+            "partial_prepayment_percent": null
+          },
+          "existing_clients": {
+            "require_prepayment": false,
+            "is_partial_prepayment_enabled": false,
+            "is_full_prepayment_allowed": true,
+            "partial_prepayment_amount": null,
+            "partial_prepayment_percent": null
+          }
+        },
+        "rating": {
+          "rating": 0,
+          "ambiance": 0,
+          "professionalism": 0,
+          "reviews_count": 0
+        },
+        "sorting_scores": {
+          "recent_login": 1,
+          "rating": 0
+        },
+        "phone": {
+          "number": "(843) 513-5774",
+          "is_cell": true
+        },
+        "payment_processor": null
+      },
+      "relationships": {
+        "baseline_service": {
+          "data": {
+            "id": "8122",
+            "type": "pu-service-durations"
+          }
+        },
+        "primary_photo": {
+          "data": {
+            "id": "5783",
+            "type": "pu-photos"
+          }
+        },
+        "photos": {
+          "data": [
+            {
+              "id": "5783",
+              "type": "pu-photos"
+            }
+          ]
+        },
+        "popular_services": {
+          "data": [
+            {
+              "id": "8119",
+              "type": "pu-service-durations"
+            },
+            {
+              "id": "8121",
+              "type": "pu-service-durations"
+            },
+            {
+              "id": "8122",
+              "type": "pu-service-durations"
+            },
+            {
+              "id": "805061",
+              "type": "pu-service-durations"
+            },
+            {
+              "id": "864402",
+              "type": "pu-service-durations"
+            },
+            {
+              "id": "916422",
+              "type": "pu-service-durations"
+            },
+            {
+              "id": "1071958",
+              "type": "pu-service-durations"
+            },
+            {
+              "id": "1208096",
+              "type": "pu-service-durations"
+            }
+          ]
+        },
+        "service_categories": {
+          "data": [
+            {
+              "id": "7",
+              "type": "service-categories"
+            },
+            {
+              "id": "12",
+              "type": "service-categories"
+            },
+            {
+              "id": "19",
+              "type": "service-categories"
+            },
+            {
+              "id": "25",
+              "type": "service-categories"
+            },
+            {
+              "id": "112787",
+              "type": "service-categories"
+            },
+            {
+              "id": "197749",
+              "type": "service-categories"
+            },
+            {
+              "id": "197753",
+              "type": "service-categories"
+            }
+          ]
+        },
+        "best_deal_service": {
+          "data": null
+        }
+      },
+      "links": {
+        "self": {
+          "href": "\/nxt\/pu-api\/v1\/businesses\/83082"
+        }
+      }
+    }
+  ]
+}
