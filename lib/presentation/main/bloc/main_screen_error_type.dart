@@ -1,0 +1,4 @@
+enum MainScreenErrorType{
+  cityNotFound,
+  noLocalData
+}

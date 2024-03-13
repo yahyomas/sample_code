@@ -1,14 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_task/core/custom_widgets/error_widget.dart';
 import 'package:test_task/core/custom_widgets/loading_widget.dart';
+import 'package:test_task/core/router/app_router.dart';
 import 'package:test_task/core/utils/generic_bloc_state.dart';
-import 'package:test_task/domain/entities/city/city.dart';
-import 'package:test_task/domain/entities/service_category/service_category.dart';
-import 'package:test_task/presentation/cities/cities_bottom_sheet.dart';
-import 'package:test_task/presentation/filter/filter_bottom_sheet.dart';
+import 'package:test_task/presentation/main/bloc/main_screen_error_type.dart';
 import 'package:test_task/presentation/main/widgets/header.dart';
-import 'package:test_task/presentation/main/widgets/item.dart';
+import 'package:test_task/presentation/main/widgets/weather_widget.dart';
+import 'package:test_task/presentation/weather_details/bloc/weather_details_screen_cubit.dart';
 
 import 'bloc/main_screen_cubit.dart';
 import 'bloc/main_screen_state.dart';
@@ -19,62 +19,47 @@ class MainScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<MainScreenCubit>();
-    return BlocBuilder<MainScreenCubit, MainScreenState>(
+    return BlocConsumer<MainScreenCubit, MainScreenState>(
+      listener: (context, state) {
+        if (state.status == Status.failure &&
+            state.mainScreenErrorType == MainScreenErrorType.cityNotFound) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('City not found'),
+            ),
+          );
+        }
+      },
       builder: (context, state) {
         if (state.status == Status.loading) {
           return const LoadingWidget();
         }
 
-        if (state.status == Status.failure) {
+        if (state.status == Status.failure &&
+            state.mainScreenErrorType == null) {
           return CustomErrorWidget(
-            onPressed: () => cubit.fetchBusinesses(),
+            onPressed: () => cubit.fetchDefaultData(),
           );
         }
 
         return SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               HeaderWidget(
-                cityName: state.selectedCity.name,
-                onCityPressed: () async {
-                  final City? city = await showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        return const CitiesBottomSheet();
-                      });
-                  cubit.onCityChanged(city);
-                },
-                onFilterPressed: () async {
-                  final ServiceCategory? serviceCategory =
-                      await showModalBottomSheet(
-                    context: context,
-                    isScrollControlled: true,
-                    builder: (context) => FilterBottomSheet(
-                      serviceCategories: state.serviceCategories,
-                      isFilterActive: state.isFilterActive,
-                      onRemoveFilterPressed: () => cubit.fetchBusinesses(),
-                    ),
-                  );
-
-                  cubit.onFilterChanged(serviceCategory);
-                },
-                isFilterActive: state.isFilterActive,
+                searchController: cubit.searchController,
               ),
-              Expanded(
-                child: CustomScrollView(
-                  slivers: [
-                    SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          final attributes = state.businesses[index].attributes;
-
-                          return BusinessItem(attributes: attributes);
-                        },
-                        childCount: state.businesses.length,
-                      ),
-                    )
-                  ],
-                ),
+              WeatherWidget(
+                cityName: state.cityName,
+                temp: state.temp,
+                feelsLike: state.feelsLike,
+                main: state.main,
+                info: state.info,
+                onTap: () {
+                  context.pushRoute(WeatherDetailsRoute(
+                      weatherDetailsScreenCubit: WeatherDetailsScreenCubit(
+                          weatherDto: state.weatherDto!)));
+                },
               )
             ],
           ),

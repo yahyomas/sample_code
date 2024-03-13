@@ -21,10 +21,14 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const MainScreen(),
       );
     },
-    SplashRoute.name: (routeData) {
+    WeatherDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<WeatherDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SplashScreen(),
+        child: WeatherDetailsScreen(
+          key: args.key,
+          weatherDetailsScreenCubit: args.weatherDetailsScreenCubit,
+        ),
       );
     },
   };
@@ -45,15 +49,39 @@ class MainRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SplashScreen]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute({List<PageRouteInfo>? children})
-      : super(
-          SplashRoute.name,
+/// [WeatherDetailsScreen]
+class WeatherDetailsRoute extends PageRouteInfo<WeatherDetailsRouteArgs> {
+  WeatherDetailsRoute({
+    Key? key,
+    required WeatherDetailsScreenCubit weatherDetailsScreenCubit,
+    List<PageRouteInfo>? children,
+  }) : super(
+          WeatherDetailsRoute.name,
+          args: WeatherDetailsRouteArgs(
+            key: key,
+            weatherDetailsScreenCubit: weatherDetailsScreenCubit,
+          ),
           initialChildren: children,
         );
 
-  static const String name = 'SplashRoute';
+  static const String name = 'WeatherDetailsRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<WeatherDetailsRouteArgs> page =
+      PageInfo<WeatherDetailsRouteArgs>(name);
+}
+
+class WeatherDetailsRouteArgs {
+  const WeatherDetailsRouteArgs({
+    this.key,
+    required this.weatherDetailsScreenCubit,
+  });
+
+  final Key? key;
+
+  final WeatherDetailsScreenCubit weatherDetailsScreenCubit;
+
+  @override
+  String toString() {
+    return 'WeatherDetailsRouteArgs{key: $key, weatherDetailsScreenCubit: $weatherDetailsScreenCubit}';
+  }
 }
